@@ -1,4 +1,4 @@
-# FORM — Character collection
+# formkey — Character collection
 
 Responsive, buildless keyboard collection website inspired by supplied product references. Includes four case finishes, six keycap colors, shareable configuration URLs, and downloadable SVG build cards. Keyboard visuals are original illustrations, not product photography. Product availability and pricing are intentionally unconfirmed.
 
@@ -15,7 +15,7 @@ No installation or build required. Deploy the `dist` directory to any static hos
 - `dist/app.js`: keyboard SVG renderer and configurator
 - `.openai/hosting.json`: private Sites deployment identity
 
-FORM is a working concept name. Replace it with the final brand before commercial use. Checkout, prices and unverified technical specifications are not included.
+Checkout, prices and unverified technical specifications are not included.
 
 ## Pages and Vercel
 
