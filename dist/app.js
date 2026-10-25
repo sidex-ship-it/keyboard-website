@@ -1,5 +1,5 @@
-const colors=[{name:'Milk',ru:'Молочный',hex:'#eee7d8',ink:'#292d2a'},{name:'Denim blue',ru:'Джинсовый синий',hex:'#477a9c',ink:'#f4eddc'},{name:'Sand honey',ru:'Песочно-медовый',hex:'#d8ac66',ink:'#292d2a'},{name:'Ice blue',ru:'Ледяной голубой',hex:'#b9d4e1',ink:'#292d2a'},{name:'Muted wine',ru:'Приглушённый винный',hex:'#753644',ink:'#f5e9d3'},{name:'Graphite',ru:'Графит',hex:'#3d4142',ink:'#f4eddc'}];
-const cases=[{name:'Silver aluminum',hex:'#b8bdbb'},{name:'Ivory',hex:'#d9d2bf'},{name:'Deep blue',hex:'#253b53'},{name:'Black',hex:'#252725'}];let selectedCase=0,selectedKey=3;
+const colors=[{name:'Milk',ru:'Молочный',hex:'#f1e2c7',ink:'#292d2a'},{name:'Denim blue',ru:'Джинсовый синий',hex:'#7ca2bd',ink:'#292d2a'},{name:'Sand honey',ru:'Песочно-медовый',hex:'#d2b388',ink:'#292d2a'},{name:'Ice blue',ru:'Ледяной голубой',hex:'#a1bdcc',ink:'#292d2a'},{name:'Muted wine',ru:'Приглушённый винный',hex:'#6e1f27',ink:'#f5e9d3'},{name:'Graphite',ru:'Графит',hex:'#3b3a38',ink:'#f4eddc'}];
+const cases=[{name:'Silver aluminum',hex:'#bcbcbc'},{name:'Ivory',hex:'#d9d2bf'},{name:'Deep blue',hex:'#253b53'},{name:'Black',hex:'#252725'}];let selectedCase=0,selectedKey=3;
 let legendMode='dual',surface='satin',switchType='linear';
 function illustratedBoard(ci,ki,id='kb'){
 const c=cases[ci],k=colors[ki];
@@ -59,3 +59,6 @@ try{const b=new URLSearchParams(location.search).get('build');if(b)apply(JSON.pa
 
 // Share the selected design with the progressive 3D studio.
 globalThis.getKeyboardDesign=()=>({c:selectedCase,k:selectedKey,l:legendMode,f:surface,s:switchType});
+
+// Colors sampled from the product pictures are shared with the 3D preview.
+globalThis.getKeyboardAppearance=()=>({keycaps:colors,finishes:cases});
