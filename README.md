@@ -27,6 +27,9 @@ See [ROADMAP.md](ROADMAP.md) for the comprehensive product, commerce, quality, l
 
 ## Expanded configurator
 
-Keyboard previews use sculpted SVG keycaps, layered case shading, textured dials and studio shadows. Choose an independent accent color, legend style, satin or brushed texture, and linear/tactile/clicky sound character. Audio is synthesized in the browser and is labeled as a simulation. The generated logo is included at `dist/logo.png`.
+Keyboard previews use sculpted SVG keycaps, layered case shading, textured dials and studio shadows. Choose a legend style, satin or brushed texture, and linear/tactile/clicky sound character. Audio is synthesized in the browser and is labeled as a simulation. The generated logo is included at `dist/logo.png`.
 
-The homepage and dedicated configurator support full-state share links and browser-local saved builds. Saved builds retain accent, legend, texture and sound choices when reopened. Physical dimensions, manufacturing compatibility and pricing remain unconfirmed.
+The homepage and dedicated configurator support full-state share links and browser-local saved builds. Saved builds retain legend, texture and sound choices when reopened. Physical dimensions, manufacturing compatibility and pricing remain unconfirmed.
+
+
+Reference-matched photo-style palette previews are generated imagery (`dist/keyboard-palettes.png`), not photographs of manufactured inventory. All keys share one base color; independent accent keys have been removed. Alternative legend modes use the editable SVG renderer. Downloaded build cards embed the palette image so they work offline.
