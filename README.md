@@ -33,3 +33,5 @@ The homepage and dedicated configurator support full-state share links and brows
 
 
 Reference-matched photo-style palette previews are generated imagery (`dist/keyboard-palettes.png`), not photographs of manufactured inventory. All keys share one base color; independent accent keys have been removed. Alternative legend modes use the editable SVG renderer. Downloaded build cards embed the palette image so they work offline.
+
+Keyboard palette previews use a transparent PNG with the surrounding backdrop removed.
