@@ -3,7 +3,8 @@ import { RoundedBoxGeometry } from './vendor/RoundedBoxGeometry.js';
 import { OrbitControls } from './vendor/OrbitControls.js';
 const appearance=globalThis.getKeyboardAppearance();
 const palette=appearance.keycaps.map(c=>c.hex);
-const finishes=appearance.finishes.map(c=>c.hex);
+// Warm cream ivory matched to the uploaded case reference; other finishes unchanged.
+const finishes=appearance.finishes.map((c,i)=>i===1?'#e6ddce':c.hex);
 const labels=[['Esc','F1','F2','F3','F4','F5','F6','F7','F8','F9','F10','F11','F12','Del'],['~ Ё','1 !','2 @','3 #','4 $','5 %','6 ^','7 &','8 *','9 (','0 )','− _','= +','Backspace'],['Tab','Q Й','W Ц','E У','R К','T Е','Y Н','U Г','I Ш','O Щ','P З','[ Х','] Ъ','\\'],['Caps','A Ф','S Ы','D В','F А','G П','H Р','J О','K Л','L Д','; Ж','’ Э','Enter'],['Shift','Z Я','X Ч','C С','V М','B И','N Т','M Ь',', Б','. Ю','/ ?','Shift'],['Ctrl','Win','Alt','SPACE','Alt','Fn','Ctrl']];
 const unit=.017;
 // Compensate for the neutral studio irradiance so sampled picture colors
