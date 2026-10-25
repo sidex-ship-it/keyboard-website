@@ -40,3 +40,5 @@ Keyboard palette previews use a transparent PNG with the surrounding backdrop re
 The homepage and configurator include a locally bundled Three.js 3D studio with modeled keycaps, a recessed deck, case depth and dial, drag/keyboard rotation and angle/top/detail views. Case and keycap choices update the model. Rendering is demand-driven, pixel ratio is capped for mobile, and product imagery remains as the fallback if WebGL is unavailable. Existing pricing copy is preserved.
 
 Straight product pictures are the default again. Only the configurator can instantiate a 3D viewer, on demand via the 3D view button. It has a single angled preset, reset and drag rotation. Both views default to English + Russian legends.
+
+The optional 3D preview renders at 2048 pixels on its longest edge, independently of screen density, with a 2048px shadow map. Tapered keycap shells, higher resolution bilingual legends, physical case materials and a procedural studio environment improve close-up quality.
