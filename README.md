@@ -35,3 +35,6 @@ The homepage and dedicated configurator support full-state share links and brows
 Reference-matched photo-style palette previews are generated imagery (`dist/keyboard-palettes.png`), not photographs of manufactured inventory. All keys share one base color; independent accent keys have been removed. Alternative legend modes use the editable SVG renderer. Downloaded build cards embed the palette image so they work offline.
 
 Keyboard palette previews use a transparent PNG with the surrounding backdrop removed.
+
+
+The homepage and configurator include a locally bundled Three.js 3D studio with modeled keycaps, a recessed deck, case depth and dial, drag/keyboard rotation and angle/top/detail views. Case and keycap choices update the model. Rendering is demand-driven, pixel ratio is capped for mobile, and product imagery remains as the fallback if WebGL is unavailable. Existing pricing copy is preserved.
