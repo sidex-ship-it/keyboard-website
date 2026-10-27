@@ -17,7 +17,7 @@ function mountainIllustration(v=0,id='mountain'){
 }
 globalThis.mountainDesign={variants:mountainVariants,cream:mountainCream,layout:mountainLayout,art:mountainArtPath,board:mountainBoard};
 
-function mountainBoard(v=0,id='matterhorn'){const index=Number.isInteger(v)&&v>=0&&v<3?v:0;return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 378" role="presentation"><image href="${new URL('pictures/matterhorn-'+index+'-4k.webp',document.baseURI).href}" width="900" height="378"/></svg>`;}
+function mountainBoard(v=0,id='matterhorn'){const index=Number.isInteger(v)&&v>=0&&v<3?v:0;return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 378" role="presentation"><image href="${new URL('pictures/matterhorn-'+index+'-4k.webp?v=mountain-frame',document.baseURI).href}" width="900" height="378"/></svg>`;}
 
 // Angular, snow-cut Matterhorn artwork, shared by every rendered colorway.
 function paintMatterhorn(c,W,H,ink,bg,label){

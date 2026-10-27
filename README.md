@@ -57,3 +57,9 @@ A model selector sits directly below the header on the homepage and configurator
 Matterhorn product pictures are native 4096 × 1720 WebP studio renders in `dist/pictures/`, with three coordinated colors. They are renders of the reference-based design, not camera photographs. The original Character product imagery is preserved. Interactive 3D uses a 4096-pixel longest drawing-buffer edge and 4096 × 4096 shadow maps. Rendering remains on demand. GPU limits may prevent WebGL on some devices; the static picture remains available.
 
 Reference refinements include bilingual cream keycaps, a cream left Shift and dark right Shift/Enter, dedicated navigation and arrows, a muted microphone icon, snow-cut Matterhorn artwork, and a green-ringed 85% display. Geometry and surface details approximate the supplied photos; they are not manufacturing measurements.
+
+## Mountain frame and separate model collections
+
+Matterhorn's enclosure now has actual low-poly ridge and triangular facet geometry on the front bezel, front wall, rear and side frame bands. The three 4K colorway pictures are regenerated from that geometry. The optional 3D viewer includes a Mountain frame close-up. English and Russian keycap legends use heavier 900-weight strokes based on the supplied reference picture.
+
+Selecting Matterhorn shows only its three coordinated colorways, frame details, specifications and saved builds in the configurator. Character palette cards and finish/texture choices are hidden until Character is selected again. Collection and configurator navigation carry the chosen Matterhorn state.
