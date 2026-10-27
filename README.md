@@ -42,3 +42,10 @@ The homepage and configurator include a locally bundled Three.js 3D studio with 
 Straight product pictures are the default again. Only the configurator can instantiate a 3D viewer, on demand via the 3D view button. It has a single angled preset, reset and drag rotation. Both views default to English + Russian legends.
 
 The optional 3D preview renders at 2048 pixels on its longest edge, independently of screen density, with a 2048px shadow map. Tapered keycap shells, higher resolution bilingual legends, physical case materials and a procedural studio environment improve close-up quality.
+
+## Mountain / 02
+
+The homepage and configurator now offer a model menu: Character / 01 keeps its original finish and keycap choices; Mountain / 02 is a reference-based concept in exactly Forest green, Burgundy, or Black, with cream English + Russian keycaps, mountain artwork and a circular 85% display. The display is a visual reference, not live battery data. The existing optional 3D view models both keyboards with drag and keyboard rotation. Mountain geometry and vector artwork are editable in `dist/mountain.js`; `dist/keyboard-3d.js` builds the meshes and painted keycap textures. Physical measurements are approximate, not manufacturing CAD.
+
+Saved builds and share URLs retain the model and Mountain color. Previous build links without a model continue to open Character / 01. There are no extra dependencies or build steps.
+
