@@ -73,3 +73,9 @@ Matterhorn's regular photo view, homepage, color cards, saved previews and build
 The latest supplied three-view case photo is the standard Black Matterhorn picture, preserved at `dist/pictures/matterhorn-case-reference.jpg`. The configurator displays the complete supplied photo; hero and palette cards show its main view. Black is the default Matterhorn color for a new visit. Existing links keep their explicit variant. Green uses the earlier supplied color photo; Wine red selectively deepens red surfaces in that earlier photo while preserving cream keycaps.
 
 Wine red replaces the former Burgundy label throughout the model collection and uses `#421722` in 3D. The enclosure now has broader chiseled front, rear and side facets, flat top rim lines and rounded beveled corners. The rear includes a centered USB-C visual detail and a Rear case inspection view. Photo source detail is limited to the uploaded originals; interactive 3D remains 4K.
+
+## One carved-case reference across every color
+
+All Matterhorn photo views now use the latest black three-view reference at `dist/pictures/matterhorn-case-reference.jpg`. Forest green and Wine red tint dark neutral surfaces of that same source with SVG color filters. Cream keycaps, green display and backdrop are preserved. Every color has the same carved frame, camera angle and three-view arrangement. The earlier reference image is retained but is no longer used by the Matterhorn photo renderer.
+
+The 3D enclosure has deeper physical mountain facets on front, rear and sides, rounded corner relief, stronger ridge/valley contrast and a dedicated raking light for the frame. Its initial Matterhorn angle shows the front and side relief more clearly. The centered rear port remains unobstructed, and all three finishes share the same sculpted geometry.

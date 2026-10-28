@@ -18,12 +18,17 @@ function mountainIllustration(v=0,id='mountain'){
 globalThis.mountainDesign={variants:mountainVariants,cream:mountainCream,layout:mountainLayout,art:mountainArtPath,board:mountainBoard};
 
 function mountainBoard(v=2,id='matterhorn'){
- const index=Number.isInteger(v)&&v>=0&&v<3?v:2;
- if(index===2){const photo=new URL('pictures/matterhorn-case-reference.jpg',document.baseURI).href,full=id==='config';return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 ${full?600:456}" role="presentation"><svg width="900" height="${full?600:456}" viewBox="0 0 1280 ${full?853:588}" overflow="hidden"><image href="${photo}" width="1280" height="853"/></svg></svg>`;}
- const photo=new URL('pictures/matterhorn-reference.jpg',document.baseURI).href,y=[95,490][index];
- // Selectively deepen only red surfaces; cream keycaps and the backdrop retain their colors.
- const filter=index===1?`<defs><filter id="${id}-wine" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 3 -4 0 0 0" result="red-surfaces"/><feComponentTransfer in="red-surfaces" result="wine"><feFuncR type="linear" slope=".68"/><feFuncG type="linear" slope=".68"/><feFuncB type="linear" slope=".68"/></feComponentTransfer><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="wine"/></feMerge></filter></defs>`:'',effect=index===1?` filter="url(#${id}-wine)"`:'';
- return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 456" role="presentation">${filter}<svg width="900" height="456" viewBox="0 ${y} 631 320" overflow="hidden"><image href="${photo}" width="853" height="1280"${effect}/></svg></svg>`;
+ const index=Number.isInteger(v)&&v>=0&&v<3?v:2,photo=new URL('pictures/matterhorn-case-reference.jpg',document.baseURI).href,full=id==='config';
+ // Every color uses the exact same supplied carved-case photo and composition.
+ // Only dark neutral surfaces are tinted; cream caps, backdrop and green display remain intact.
+ let defs='',effect='';
+ if(index!==2){
+  const [r,g,b]=index===0?[1.15,1.35,1.04]:[1.40,.52,.76];
+  const row=n=>`${.2126*n} ${.7152*n} ${.0722*n} 0 0`;
+  defs=`<defs><filter id="${id}-finish" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 -.8504 -2.8608 -.2888 0 2.2" result="dark"/><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 4 -8 4 0 1" result="neutral"/><feComposite in="dark" in2="neutral" operator="in" result="surface"/><feColorMatrix in="surface" type="matrix" values="${row(r)} ${row(g)} ${row(b)} 0 0 0 1 0" result="finish"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="finish"/></feMerge></filter></defs>`;
+  effect=` filter="url(#${id}-finish)"`;
+ }
+ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 ${full?600:456}" role="presentation">${defs}<svg width="900" height="${full?600:456}" viewBox="0 0 1280 ${full?853:588}" overflow="hidden"><image href="${photo}" width="1280" height="853"${effect}/></svg></svg>`;
 }
 
 // Angular, snow-cut Matterhorn artwork, shared by every rendered colorway.
