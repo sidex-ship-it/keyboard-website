@@ -18,8 +18,8 @@ function mountainIllustration(v=0,id='mountain'){
 globalThis.mountainDesign={variants:mountainVariants,cream:mountainCream,layout:mountainLayout,art:mountainArtPath,board:mountainBoard};
 
 function mountainBoard(v=2,id='matterhorn'){
- const index=Number.isInteger(v)&&v>=0&&v<3?v:2,photo=new URL('pictures/matterhorn-case-reference.jpg',document.baseURI).href,full=id==='config';
- // Every color uses the exact same supplied carved-case photo and composition.
+ const index=Number.isInteger(v)&&v>=0&&v<3?v:2,photo=new URL('pictures/matterhorn-case-reference.jpg',document.baseURI).href;
+ // Show the complete main keyboard only. Lower inset photos are excluded from the display.
  // Only dark neutral surfaces are tinted; cream caps, backdrop and green display remain intact.
  let defs='',effect='';
  if(index!==2){
@@ -28,7 +28,10 @@ function mountainBoard(v=2,id='matterhorn'){
   defs=`<defs><filter id="${id}-finish" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 -.8504 -2.8608 -.2888 0 2.2" result="dark"/><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 4 -8 4 0 1" result="neutral"/><feComposite in="dark" in2="neutral" operator="in" result="surface"/><feColorMatrix in="surface" type="matrix" values="${row(r)} ${row(g)} ${row(b)} 0 0 0 1 0" result="finish"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="finish"/></feMerge></filter></defs>`;
   effect=` filter="url(#${id}-finish)"`;
  }
- return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 ${full?600:456}" role="presentation">${defs}<svg width="900" height="${full?600:456}" viewBox="0 0 1280 ${full?853:588}" overflow="hidden"><image href="${photo}" width="1280" height="853"${effect}/></svg></svg>`;
+ // The main case extends below the left inset divider. Preserve that complete case
+ // while masking the inset on the left, and continue the neutral studio backdrop.
+ const clean=`<defs><linearGradient id="${id}-backdrop" x1="0" x2="1280" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fdfcfa"/><stop offset=".1" stop-color="#fcfcf4"/><stop offset=".2" stop-color="#fffbf5"/><stop offset=".3" stop-color="#fff6ef"/><stop offset=".4" stop-color="#f5e2db"/><stop offset=".5" stop-color="#d9c2b4"/><stop offset=".57" stop-color="#af9a89"/><stop offset="1" stop-color="#efdfd0"/></linearGradient><linearGradient id="${id}-inset-edge" x1="680" x2="720" gradientUnits="userSpaceOnUse"><stop stop-color="black"/><stop offset="1" stop-color="white"/></linearGradient><mask id="${id}-main-product" maskUnits="userSpaceOnUse" x="0" y="0" width="1280" height="640"><rect width="1280" height="582" fill="white"/><rect y="582" width="1280" height="58" fill="url(#${id}-inset-edge)"/></mask></defs>`;
+ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="presentation">${defs}${clean}<svg width="900" height="450" viewBox="0 0 1280 640" overflow="hidden"><rect width="1280" height="640" fill="url(#${id}-backdrop)"/><g mask="url(#${id}-main-product)"><image href="${photo}" width="1280" height="853"${effect}/></g></svg></svg>`;
 }
 
 // Angular, snow-cut Matterhorn artwork, shared by every rendered colorway.

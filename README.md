@@ -79,3 +79,7 @@ Wine red replaces the former Burgundy label throughout the model collection and 
 All Matterhorn photo views now use the latest black three-view reference at `dist/pictures/matterhorn-case-reference.jpg`. Forest green and Wine red tint dark neutral surfaces of that same source with SVG color filters. Cream keycaps, green display and backdrop are preserved. Every color has the same carved frame, camera angle and three-view arrangement. The earlier reference image is retained but is no longer used by the Matterhorn photo renderer.
 
 The 3D enclosure has deeper physical mountain facets on front, rear and sides, rounded corner relief, stronger ridge/valley contrast and a dedicated raking light for the frame. Its initial Matterhorn angle shows the front and side relief more clearly. The centered rear port remains unobstructed, and all three finishes share the same sculpted geometry.
+
+## Clean product-only photographs
+
+Every Matterhorn still view now displays only the complete main keyboard from the shared reference. The lower detail-photo panels are excluded by an SVG display mask; a neutral studio backdrop continues below the main view. The mask preserves the case's lower-right corner, which extends below the inset divider in the original collage. Cards, hero, configurator, saved previews and offline build cards use the same product-only composition in every color. The source JPEG remains unchanged.
