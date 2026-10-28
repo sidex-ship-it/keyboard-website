@@ -63,3 +63,13 @@ Reference refinements include bilingual cream keycaps, a cream left Shift and da
 Matterhorn's enclosure now has actual low-poly ridge and triangular facet geometry on the front bezel, front wall, rear and side frame bands. The three 4K colorway pictures are regenerated from that geometry. The optional 3D viewer includes a Mountain frame close-up. English and Russian keycap legends use heavier 900-weight strokes based on the supplied reference picture.
 
 Selecting Matterhorn shows only its three coordinated colorways, frame details, specifications and saved builds in the configurator. Character palette cards and finish/texture choices are hidden until Character is selected again. Collection and configurator navigation carry the chosen Matterhorn state.
+
+## Reference photographs for the regular view
+
+Matterhorn's regular photo view, homepage, color cards, saved previews and build cards now display front-facing crops of the user's supplied green, burgundy and black reference image. The original JPEG is preserved unchanged at `dist/pictures/matterhorn-reference.jpg`; SVG viewports select each color without redrawing the lettering, artwork or frame. The uploaded source is 853 × 1280, so still-image detail is limited to that source. The interactive 3D model remains a separate 4K view; the prior 4K model renders are retained as assets.
+
+## Carved case reference and Wine red
+
+The latest supplied three-view case photo is the standard Black Matterhorn picture, preserved at `dist/pictures/matterhorn-case-reference.jpg`. The configurator displays the complete supplied photo; hero and palette cards show its main view. Black is the default Matterhorn color for a new visit. Existing links keep their explicit variant. Green uses the earlier supplied color photo; Wine red selectively deepens red surfaces in that earlier photo while preserving cream keycaps.
+
+Wine red replaces the former Burgundy label throughout the model collection and uses `#421722` in 3D. The enclosure now has broader chiseled front, rear and side facets, flat top rim lines and rounded beveled corners. The rear includes a centered USB-C visual detail and a Rear case inspection view. Photo source detail is limited to the uploaded originals; interactive 3D remains 4K.

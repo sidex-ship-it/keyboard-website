@@ -1,5 +1,5 @@
 // Shared reference-based geometry and artwork for the Mountain / 02 concept.
-const mountainVariants=[{name:'Forest green',hex:'#3e4938'},{name:'Burgundy',hex:'#64232e'},{name:'Black',hex:'#292c2b'}];
+const mountainVariants=[{name:'Forest green',hex:'#3e4938'},{name:'Wine red',hex:'#421722'},{name:'Black',hex:'#292c2b'}];
 const mountainCream='#f2e5cf';
 function mountainLayout(){
  const keys=[],add=(label,x,y,w=45,row=0)=>keys.push({label,x,y,w,h:43,row,accent:['Esc','Mic','Enter'].includes(label)||(label==='Shift'&&x>500)});
@@ -17,7 +17,14 @@ function mountainIllustration(v=0,id='mountain'){
 }
 globalThis.mountainDesign={variants:mountainVariants,cream:mountainCream,layout:mountainLayout,art:mountainArtPath,board:mountainBoard};
 
-function mountainBoard(v=0,id='matterhorn'){const index=Number.isInteger(v)&&v>=0&&v<3?v:0;return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 378" role="presentation"><image href="${new URL('pictures/matterhorn-'+index+'-4k.webp?v=mountain-frame',document.baseURI).href}" width="900" height="378"/></svg>`;}
+function mountainBoard(v=2,id='matterhorn'){
+ const index=Number.isInteger(v)&&v>=0&&v<3?v:2;
+ if(index===2){const photo=new URL('pictures/matterhorn-case-reference.jpg',document.baseURI).href,full=id==='config';return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 ${full?600:456}" role="presentation"><svg width="900" height="${full?600:456}" viewBox="0 0 1280 ${full?853:588}" overflow="hidden"><image href="${photo}" width="1280" height="853"/></svg></svg>`;}
+ const photo=new URL('pictures/matterhorn-reference.jpg',document.baseURI).href,y=[95,490][index];
+ // Selectively deepen only red surfaces; cream keycaps and the backdrop retain their colors.
+ const filter=index===1?`<defs><filter id="${id}-wine" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 3 -4 0 0 0" result="red-surfaces"/><feComponentTransfer in="red-surfaces" result="wine"><feFuncR type="linear" slope=".68"/><feFuncG type="linear" slope=".68"/><feFuncB type="linear" slope=".68"/></feComponentTransfer><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="wine"/></feMerge></filter></defs>`:'',effect=index===1?` filter="url(#${id}-wine)"`:'';
+ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 456" role="presentation">${filter}<svg width="900" height="456" viewBox="0 ${y} 631 320" overflow="hidden"><image href="${photo}" width="853" height="1280"${effect}/></svg></svg>`;
+}
 
 // Angular, snow-cut Matterhorn artwork, shared by every rendered colorway.
 function paintMatterhorn(c,W,H,ink,bg,label){

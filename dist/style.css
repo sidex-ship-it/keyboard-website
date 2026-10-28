@@ -19,3 +19,5 @@
 .start-model-options .start-thumb{display:block;width:40%;max-width:180px;flex-shrink:0}.start-thumb svg{display:block;width:100%;height:auto}@media(max-width:760px){.start-model-options .start-thumb{width:100%;max-width:none}}
 
 body[data-keyboard-model="mountain"] #color-cards .card{background:#e8e8dc}body[data-keyboard-model="mountain"] #color-cards .card:nth-child(2){background:#ede0dd}body[data-keyboard-model="mountain"] #color-cards .card:nth-child(3){background:#e0e2df}#color-cards .card[aria-pressed="true"]{outline:2px solid #354c3c;outline-offset:3px}.viewer-toolbar{flex-wrap:wrap;gap:10px}
+
+.start-model-options .matterhorn-photo-thumb{display:block;width:40%;max-width:180px;flex-shrink:0}.matterhorn-photo-thumb svg{display:block;width:100%;height:auto}body[data-keyboard-model="mountain"] #config-board svg,body[data-keyboard-model="mountain"] .hero-board svg{border-radius:8px}body[data-keyboard-model="mountain"] #color-cards .card svg{transform:none}@media(max-width:760px){.start-model-options .matterhorn-photo-thumb{width:100%;max-width:none}}
