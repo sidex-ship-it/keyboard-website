@@ -104,3 +104,6 @@ Delivery assets use `character-z84-palettes.webp` (258,810 bytes versus the 2,04
 
 
 Blue/colored photo cases now use closed, padded chassis contours. Open contour fragments previously closed diagonally across the keyboard and recolored the keycaps; the corrected ring masks isolate the enclosure for all six palettes.
+
+
+The 3D preview imports its shared Character layout directly, including when opened from the homepage. Every HTML entry point that uses the classic renderer also loads that layout. Failed fallback construction cleans up its DOM, and retries remove incomplete stages/toolbars so empty or duplicate panels cannot accumulate.
