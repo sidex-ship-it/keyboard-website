@@ -32,7 +32,7 @@ Keyboard previews use sculpted SVG keycaps, layered case shading, textured dials
 The homepage and dedicated configurator support full-state share links and browser-local saved builds. Saved builds retain legend, texture and sound choices when reopened. Physical dimensions, manufacturing compatibility and pricing remain unconfirmed.
 
 
-Reference-matched photo-style palette previews are generated imagery (`dist/keyboard-palettes.png`), not photographs of manufactured inventory. All keys share one base color; independent accent keys have been removed. Alternative legend modes use the editable SVG renderer. Downloaded build cards embed the palette image so they work offline.
+Reference-matched photo-style palette previews are generated imagery (`dist/character-z84-palettes.png`), not photographs of manufactured inventory. All keys share one base color; independent accent keys have been removed. Alternative legend modes use the editable SVG renderer. Downloaded build cards embed the palette image so they work offline.
 
 Keyboard palette previews use a transparent PNG with the surrounding backdrop removed.
 
@@ -83,3 +83,8 @@ The 3D enclosure has deeper physical mountain facets on front, rear and sides, r
 ## Clean product-only photographs
 
 Every Matterhorn still view now displays only the complete main keyboard from the shared reference. The lower detail-photo panels are excluded by an SVG display mask; a neutral studio backdrop continues below the main view. The mask preserves the case's lower-right corner, which extends below the inset divider in the original collage. Cards, hero, configurator, saved previews and offline build cards use the same product-only composition in every color. The source JPEG remains unchanged.
+
+
+## Character Z-84 replacement
+
+Character now uses the knobless Z-84 reference design. A shared layout in `dist/character-model.js` defines exactly 84 keys for the SVG and 3D renderers, including PrtSc/Pause/Del, Home/End/PgUp/PgDn and inverted-T arrows. The old dial model and palette asset are replaced. Existing Matterhorn functionality, pricing copy and saved color choices are preserved.
