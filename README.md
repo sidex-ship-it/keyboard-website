@@ -91,3 +91,16 @@ Character now uses the knobless Z-84 reference design. A shared layout in `dist/
 
 
 The live 3D viewer uses a 2K canvas on phones and a 4K canvas on desktop, bounded by device GPU limits. Shadow maps are sized separately. Case/switch changes reuse existing legend textures. A lost graphics context returns to the photo with a working 3D retry; disposed viewers release their shadow maps and WebGL contexts.
+
+
+Mobile startup no longer waits for animation-frame callbacks. The 3D button queues a cancellable task and draws the first frame directly, with loading state reset on both success and failure. Mobile uses studio lights and a 2K canvas without runtime reflection-map baking or multisampling. Product photo remains available during startup.
+
+
+## Phone performance
+
+`dist/keyboard-preview.js` loads the WebGL renderer and its Three.js dependencies only after a 3D request. Mobile uses one 2048×1024 legend atlas and omits concealed switch/support meshes; rendering stops while idle. Returning to the photo or hiding the page disposes the viewer and releases its graphics context. Case changes reuse lettering. Failed WebGL startup, lost contexts and failed renderer downloads automatically use an interactive CSS 3D keyboard with individual raised EN/RU keys, finish/color controls and drag/keyboard rotation.
+
+Delivery assets use `character-z84-palettes.webp` (258,810 bytes versus the 2,042,267-byte PNG) and `logo.webp` (656 bytes versus 964,472 bytes). Originals are retained for source editing. Product colors, model choices and existing pricing are unchanged.
+
+
+Blue/colored photo cases now use closed, padded chassis contours. Open contour fragments previously closed diagonally across the keyboard and recolored the keycaps; the corrected ring masks isolate the enclosure for all six palettes.
