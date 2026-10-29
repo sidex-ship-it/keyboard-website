@@ -111,3 +111,7 @@ The 3D preview imports its shared Character layout directly, including when open
 ## Mouse collection
 
 `dist/mouse.html` adds a dedicated mouse item with five colors: White, Black, Navy, Sage green and Wine red. Original, unmodified supplied four-view JPEGs are in `dist/pictures/mouse-*.jpg`. Color selection updates the product image, accessible selection state and shareable `?color=` URL, including browser back/forward navigation. Homepage, collection and site navigation link to the mouse. Styles and behavior are isolated in `mouse.css` and `mouse.js`; keyboard configurators remain independent. No price, availability or technical specifications are assumed. No build step is required.
+
+## Mouse 3D studio and product menu
+
+Every page has a prominent Keyboard / Mouse menu. The mouse page offers a larger viewer with optional interactive 3D, five finishes, drag/keyboard rotation, zoom, reset/top/side/underside views and downloadable GLB models. `mouse-model.js` builds the reference-based geometry; `mouse-viewer-engine.js` renders on demand with local Three.js. Product photos remain the default and fallback. The geometry approximates the supplied views; it is not manufacturing CAD. Models use metre units.
