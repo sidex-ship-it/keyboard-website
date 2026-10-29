@@ -88,3 +88,6 @@ Every Matterhorn still view now displays only the complete main keyboard from th
 ## Character Z-84 replacement
 
 Character now uses the knobless Z-84 reference design. A shared layout in `dist/character-model.js` defines exactly 84 keys for the SVG and 3D renderers, including PrtSc/Pause/Del, Home/End/PgUp/PgDn and inverted-T arrows. The old dial model and palette asset are replaced. Existing Matterhorn functionality, pricing copy and saved color choices are preserved.
+
+
+The live 3D viewer uses a 2K canvas on phones and a 4K canvas on desktop, bounded by device GPU limits. Shadow maps are sized separately. Case/switch changes reuse existing legend textures. A lost graphics context returns to the photo with a working 3D retry; disposed viewers release their shadow maps and WebGL contexts.
