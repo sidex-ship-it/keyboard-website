@@ -107,3 +107,7 @@ Blue/colored photo cases now use closed, padded chassis contours. Open contour f
 
 
 The 3D preview imports its shared Character layout directly, including when opened from the homepage. Every HTML entry point that uses the classic renderer also loads that layout. Failed fallback construction cleans up its DOM, and retries remove incomplete stages/toolbars so empty or duplicate panels cannot accumulate.
+
+## Mouse collection
+
+`dist/mouse.html` adds a dedicated mouse item with five colors: White, Black, Navy, Sage green and Wine red. Original, unmodified supplied four-view JPEGs are in `dist/pictures/mouse-*.jpg`. Color selection updates the product image, accessible selection state and shareable `?color=` URL, including browser back/forward navigation. Homepage, collection and site navigation link to the mouse. Styles and behavior are isolated in `mouse.css` and `mouse.js`; keyboard configurators remain independent. No price, availability or technical specifications are assumed. No build step is required.
