@@ -1,9 +1,9 @@
-// Give every product picture the same reveal, including SVG keyboard previews.
-// Keep images visible if scripting, motion, or animation support is unavailable.
+// Pictures remain fully visible. Repeat a small directional slide on each visit.
 (() => {
+  if (!('IntersectionObserver' in window) || !Element.prototype.animate) return;
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
-  if (preference.matches || !('IntersectionObserver' in window) || !Element.prototype.animate) return;
-  const running = new Set();
+  const pictures = [...document.querySelectorAll('[data-picture-reveal], .atelier-hero-art, .tile-art, .edition-gallery, .edition-banner > img, .mouse-visual > img, .mouse-feature > a')];
+  const states = new Map(pictures.map(picture => [picture, { inside: false, visit: 0, animation: null }]));
   const decoded = new Map();
   const ready = picture => Promise.allSettled(
     [...picture.querySelectorAll('img, image'), ...(picture.matches('img') ? [picture] : [])].map(image => {
@@ -17,34 +17,48 @@
       return decoded.get(source);
     })
   );
+  let previousScroll = scrollY;
+  let direction = 1;
+  addEventListener('scroll', () => {
+    if (scrollY !== previousScroll) direction = scrollY > previousScroll ? 1 : -1;
+    previousScroll = scrollY;
+  }, { passive: true });
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {
-      if (!entry.isIntersecting || entry.intersectionRatio < .28) continue;
-      observer.unobserve(entry.target);
-      // Slow and lazy-loaded pictures should not miss their own reveal.
-      ready(entry.target).then(() => {
-        if (preference.matches || !entry.target.isConnected) return;
-        const bounds = entry.target.getBoundingClientRect();
-        if (bounds.bottom <= 0 || bounds.top >= innerHeight) {
-          observer.observe(entry.target);
-          return;
-        }
-        const animation = entry.target.animate([
-          { opacity: 0, transform: 'translateY(22px)' },
-          { opacity: 1, transform: 'translateY(0)' }
-        ], { duration: 650, delay: 80, fill: 'backwards', easing: 'cubic-bezier(.2,.7,.2,1)' });
-        running.add(animation);
-        const done = () => running.delete(animation);
-        animation.addEventListener('finish', done, { once: true });
-        animation.addEventListener('cancel', done, { once: true });
+      const picture = entry.target;
+      const state = states.get(picture);
+      if (!entry.isIntersecting) {
+        state.inside = false;
+        state.visit++;
+        state.animation?.cancel();
+        state.animation = null;
+        continue;
+      }
+      if (state.inside || entry.intersectionRatio < .18) continue;
+      state.inside = true;
+      const visit = ++state.visit;
+      const from = direction * 22;
+      ready(picture).then(() => {
+        if (preference.matches || !picture.isConnected || !state.inside || state.visit !== visit) return;
+        // No opacity reset, hidden state or delayed blank frame before movement.
+        state.animation?.cancel();
+        state.animation = picture.animate([
+          { transform: `translateY(${from}px)` },
+          { transform: 'translateY(0)' }
+        ], { duration: 650, easing: 'cubic-bezier(.2,.7,.2,1)' });
       });
     }
-  }, { threshold: .28 });
-  document.querySelectorAll('[data-picture-reveal], .atelier-hero-art, .tile-art, .edition-gallery, .edition-banner > img, .mouse-visual > img, .mouse-feature > a').forEach(picture => observer.observe(picture));
-  preference.addEventListener('change', event => {
-    if (!event.matches) return;
+  }, { threshold: [0, .18] });
+  const watch = () => {
     observer.disconnect();
-    for (const animation of running) animation.cancel();
-    running.clear();
-  });
+    for (const [picture, state] of states) {
+      state.visit++;
+      state.inside = false;
+      state.animation?.cancel();
+      state.animation = null;
+      if (!preference.matches) observer.observe(picture);
+    }
+  };
+  preference.addEventListener('change', watch);
+  watch();
 })();
