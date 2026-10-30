@@ -45,7 +45,7 @@
         state.animation = picture.animate([
           { transform: `translateY(${from}px)` },
           { transform: 'translateY(0)' }
-        ], { duration: 1000, easing: 'cubic-bezier(.2,.7,.2,1)' });
+        ], { duration: 1000, easing: 'cubic-bezier(.42,0,.58,1)' });
       });
     }
   }, { threshold: [0, .18] });
