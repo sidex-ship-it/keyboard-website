@@ -1,4 +1,4 @@
-import './character-model.js?v=viewer-layout-fix';
+import './character-model.js?v=reference-2';
 // Small preview controller. Three.js is fetched only after a 3D request.
 const original=document.querySelector('#config-board');
 if(original){
@@ -12,7 +12,7 @@ if(original){
  async function model(){const token=++request;modelButton.textContent='Loading 3D…';modelButton.setAttribute('aria-busy','true');let timer;
   try{
    let Viewer=LightweightViewer;
-   if(!lightweight){try{modulePromise??=import('./keyboard-3d.js?v=viewer-layout-fix');const module=await Promise.race([modulePromise,new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('3D download timeout')),8000);})]);Viewer=module.KeyboardViewer;}catch{lightweight=true;}finally{clearTimeout(timer);}}
+   if(!lightweight){try{modulePromise??=import('./keyboard-3d.js?v=character-reference-2');const module=await Promise.race([modulePromise,new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('3D download timeout')),8000);})]);Viewer=module.KeyboardViewer;}catch{lightweight=true;}finally{clearTimeout(timer);}}
    if(token!==request)return;
    dispose();try{viewer=new Viewer(host);if(!viewer.renderer&&Viewer!==LightweightViewer)throw Error('WebGL unavailable');active=true;buttons();viewer.renderNow();}catch{dispose();if(token!==request)return;lightweight=true;viewer=new LightweightViewer(host);active=true;buttons();viewer.renderNow();}
   }finally{clearTimeout(timer);if(token===request)done();}

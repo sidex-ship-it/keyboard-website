@@ -15,3 +15,5 @@
 
 /* Isolate the complete first keyboard row; source layouts differ between hosts. */
 .tile-art.character-tile{align-items:center;padding:22px}.character-tile-preview{display:block;width:100%;height:100%;overflow:hidden}
+
+.character-details{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 28px}.character-details[hidden]{display:none}.character-details figure{margin:0;min-width:0;background:#f8f5ee;border:1px solid #19354820;border-radius:3px;padding:10px}.character-details svg{display:block;width:100%;height:auto}.character-details figcaption{font-size:9px;color:#6b7477;padding:10px 2px 2px;line-height:1.5}.config-art:has(#character-details:not([hidden])){position:relative}.character-tile-preview{overflow:hidden}

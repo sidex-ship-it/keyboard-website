@@ -119,3 +119,7 @@ Every page has a prominent Keyboard / Mouse menu. The mouse page offers a larger
 ## Matterhorn mouse and studio redesign
 
 The collection now contains Character and Matterhorn keyboards, Character Mouse and Matterhorn Mouse. `matterhorn-mouse.html` uses the unmodified supplied Forest/Burgundy/Black reference with SVG viewports, three color selections, share links and a direct matching-keyboard link. `atelier.css` gives the site a cream/navy editorial design, with a new product-led homepage and clear four-item navigation. Existing keyboard builders, saved builds, mouse 3D and downloadable GLB models remain available. Reference images and 3D are visual studies, not verified manufacturing specifications.
+
+## Replacement Character Z-84
+
+The Character keyboard now uses all eight newly supplied reference sheets (four case finishes × six keycap palettes), replacing the former dial-equipped imagery. Main previews, detail panels, palette pages, saved builds, downloaded cards and collection thumbnails use exact reference viewports without synthetic tinting. The shared 84-key EN+RU layout has a complete 16-key top row; the Character 3D model no longer has a dial. Matterhorn retains its separate circular display. Numeric case/color indices and saved/share links remain compatible. Original replacement JPEGs are in `dist/pictures/character-reference-*.jpg`; old Character image sheets were removed.
