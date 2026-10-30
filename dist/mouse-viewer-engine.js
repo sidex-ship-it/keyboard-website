@@ -4,7 +4,7 @@ import {createMouse} from './mouse-model.js';
 export class MouseViewer{
  constructor(host){
   this.host=host;this.scene=new THREE.Scene();this.scene.background=new THREE.Color('#e8e9e4');
-  this.camera=new THREE.PerspectiveCamera(34,1,.001,10);this.camera.position.set(.16,.16,.20);
+  this.camera=new THREE.PerspectiveCamera(34,1,.001,10);this.camera.position.set(-.14,.15,-.17);
   this.renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});this.renderer.setPixelRatio(Math.min(devicePixelRatio,2));this.renderer.setSize(900,650);this.renderer.shadowMap.enabled=true;this.renderer.shadowMap.type=THREE.PCFSoftShadowMap;this.renderer.outputColorSpace=THREE.SRGBColorSpace;this.renderer.toneMapping=THREE.ACESFilmicToneMapping;this.renderer.toneMappingExposure=1.3;
   const canvas=this.renderer.domElement;canvas.tabIndex=0;canvas.setAttribute('role','img');canvas.setAttribute('aria-label','Interactive 3D mouse. Drag or use arrow keys to rotate; plus and minus to zoom.');host.append(canvas);
   this.controls=new OrbitControls(this.camera,canvas);this.controls.target.set(0,.017,0);this.controls.enablePan=false;this.controls.minDistance=.10;this.controls.maxDistance=.5;this.controls.maxPolarAngle=Math.PI*.94;this.controls.addEventListener('change',()=>this.render());this.controls.update();
@@ -19,5 +19,5 @@ export class MouseViewer{
  render(){this.renderer.render(this.scene,this.camera);}
  resize(){if(!this.host.clientWidth)return;const w=this.host.clientWidth,h=this.host.clientHeight;this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.updateProjectionMatrix();this.render();}
  zoom(factor){const v=this.camera.position.clone().sub(this.controls.target);v.setLength(THREE.MathUtils.clamp(v.length()*factor,.10,.5));this.camera.position.copy(this.controls.target).add(v);this.controls.update();this.render();}
- view(name){const positions={angle:[.16,.16,.20],top:[0,.25,.0001],side:[-.25,.065,.01],bottom:[.02,-.24,.001]};this.floor.visible=name!=='bottom';this.camera.position.fromArray(positions[name]||positions.angle);this.controls.update();this.render();}
+ view(name){const positions={angle:[-.14,.15,-.17],top:[0,.25,.0001],side:[-.25,.065,.01],bottom:[.02,-.24,.001]};this.floor.visible=name!=='bottom';this.camera.position.fromArray(positions[name]||positions.angle);this.controls.update();this.render();}
 }

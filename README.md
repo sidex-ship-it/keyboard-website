@@ -115,3 +115,7 @@ The 3D preview imports its shared Character layout directly, including when open
 ## Mouse 3D studio and product menu
 
 Every page has a prominent Keyboard / Mouse menu. The mouse page offers a larger viewer with optional interactive 3D, five finishes, drag/keyboard rotation, zoom, reset/top/side/underside views and downloadable GLB models. `mouse-model.js` builds the reference-based geometry; `mouse-viewer-engine.js` renders on demand with local Three.js. Product photos remain the default and fallback. The geometry approximates the supplied views; it is not manufacturing CAD. Models use metre units.
+
+## Matterhorn mouse and studio redesign
+
+The collection now contains Character and Matterhorn keyboards, Character Mouse and Matterhorn Mouse. `matterhorn-mouse.html` uses the unmodified supplied Forest/Burgundy/Black reference with SVG viewports, three color selections, share links and a direct matching-keyboard link. `atelier.css` gives the site a cream/navy editorial design, with a new product-led homepage and clear four-item navigation. Existing keyboard builders, saved builds, mouse 3D and downloadable GLB models remain available. Reference images and 3D are visual studies, not verified manufacturing specifications.
