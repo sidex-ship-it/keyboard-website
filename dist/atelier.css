@@ -12,3 +12,6 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 
 .edition-photo-stage>svg{flex:none;width:auto;height:100%;aspect-ratio:365/595;max-width:100%;overflow:hidden}
+
+/* Isolate the complete first keyboard row; source layouts differ between hosts. */
+.tile-art.character-tile{align-items:center;padding:22px}.character-tile-preview{display:block;width:100%;height:100%;overflow:hidden}
