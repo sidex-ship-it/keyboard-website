@@ -6,9 +6,9 @@ function renderMouse(){
  const variant=mouseVariants.find(v=>v.slug===requested)||mouseVariants[0];
  const img=document.querySelector('#mouse-image');
  img.src='/pictures/mouse-'+variant.slug+'.jpg';
- img.alt='formkey mouse in '+variant.name+' — angled, top, side and rear views';
+ img.alt='montset mouse in '+variant.name+' — angled, top, side and rear views';
  document.querySelector('#mouse-color-name').textContent=variant.name;
- document.title='Mouse / '+variant.name+' — formkey';
+ document.title='Mouse / '+variant.name+' — montset';
  document.querySelectorAll('[data-mouse-color]').forEach(a=>a.setAttribute('aria-current',String(a.dataset.mouseColor===variant.slug)));
  document.querySelector('#mouse-original').href=img.src;
  document.querySelector('#mouse-status').textContent='';

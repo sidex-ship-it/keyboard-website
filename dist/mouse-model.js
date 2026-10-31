@@ -6,7 +6,7 @@ function width(z){return 3.2*Math.sqrt(Math.max(.002,1-Math.pow(Math.abs(z/6.1),
 function height(x,z){const w=width(z);return .48+3.32*Math.max(.03,1-Math.pow((z-.25)/7.4,2))*Math.pow(Math.max(0,1-(x/w)**2),.48);}
 function patch(z0,z1,u0,u1,lift=0){const pos=[],idx=[],nx=36,nz=64;for(let j=0;j<=nz;j++){const z=z0+(z1-z0)*j/nz;for(let i=0;i<=nx;i++){const x=width(z)*(u0+(u1-u0)*i/nx);pos.push(x,height(x,z)+lift,z);}}for(let j=0;j<nz;j++)for(let i=0;i<nx;i++){let a=j*(nx+1)+i;idx.push(a,a+nx+1,a+1,a+1,a+nx+1,a+nx+2);}const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setIndex(idx);g.computeVertexNormals();return g;}
 export function createMouse(slug='white'){
-const root=new THREE.Group();root.name='formkey mouse / '+slug;root.scale.setScalar(.01);
+const root=new THREE.Group();root.name='montset mouse / '+slug;root.scale.setScalar(.01);
 const finish=mouseFinishes[slug]||mouseFinishes.white;
 const shell=new THREE.MeshStandardMaterial({color:finish.shell,roughness:.43,metalness:.08});
 const ink=new THREE.MeshStandardMaterial({color:finish.line,roughness:.5});

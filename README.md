@@ -1,4 +1,4 @@
-# formkey — Character collection
+# montset — Character collection
 
 Responsive, buildless keyboard collection website inspired by supplied product references. Includes four case finishes, six keycap colors, shareable configuration URLs, and downloadable SVG build cards. Keyboard visuals are original illustrations, not product photography. Product availability and pricing are intentionally unconfirmed.
 
@@ -123,3 +123,7 @@ The collection now contains Character and Matterhorn keyboards, Character Mouse 
 ## Replacement Character Z-84
 
 The Character keyboard now uses all eight newly supplied reference sheets (four case finishes × six keycap palettes), replacing the former dial-equipped imagery. Main previews, detail panels, palette pages, saved builds, downloaded cards and collection thumbnails use exact reference viewports without synthetic tinting. The shared 84-key EN+RU layout has a complete 16-key top row; the Character 3D model no longer has a dial. Matterhorn retains its separate circular display. Numeric case/color indices and saved/share links remain compatible. Original replacement JPEGs are in `dist/pictures/character-reference-*.jpg`; old Character image sheets were removed.
+
+## montset branding
+
+The site now uses the supplied montset wordmark in the header, footer and favicon, with updated page titles, copy and download names. The original logo reference is preserved in `dist/brand/montset-reference.jpg`. The source repository and hosted URL are retained, and saved builds keep their existing local storage key.
